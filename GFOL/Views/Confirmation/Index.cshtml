@@ -1,0 +1,35 @@
+﻿@model ConfirmationVM
+@{
+    ViewData["Title"] = "Confirmation";
+}
+<gfol-container>
+    <gfol-main-wrapper>
+        <gfol-row>
+            <gfol-column desktop-size="FullWidth" tablet-size="FullWidth">
+                <div class="govuk-panel govuk-panel--confirmation">
+                    <gfol-heading heading-type="H2" text="You've sent your feedback"></gfol-heading>
+                    <div class="govuk-panel__body">
+                        Your reference number
+                        <br><strong>@Model.SubmissionId</strong>
+                    </div>
+                </div>
+
+                <gfol-heading heading-type="H2" text="What happens next?"></gfol-heading>
+
+                <gfol-paragraph>
+                    What people tell us about your lighting helps us build a picture of the standard of lighting outside you home.
+                </gfol-paragraph>
+                <gfol-paragraph>
+                    One of our inspectors will look at the information you've given us. How they use it will depend on what you've said. If your concerns are serious we'll take action, like demolishing lamp-posts or changing light bulbs.
+                </gfol-paragraph>
+                <gfol-paragraph>
+                    We'll email you in the next 5 days to tell you when we've passed your information to an inspector.
+                </gfol-paragraph>
+                <form asp-controller="Home" asp-action="Index" method="get">
+                    @Html.GfolButton("submit", "Done")
+                </form>
+
+            </gfol-column>
+        </gfol-row>
+    </gfol-main-wrapper>
+</gfol-container>

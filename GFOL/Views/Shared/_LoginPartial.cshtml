@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="govuk-list govuk-!-font-size-16">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li>
+        <a class="govuk-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+    </li>
+    <li>
+        <form  asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button class="govuk-link" type="submit">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li>
+        <a class="govuk-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li>
+        <a class="govuk-link" asp-area="Identity" asp-page="/Account/Login">Admin Login</a>
+    </li>
+}
+</ul>

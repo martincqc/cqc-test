@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<gfol-container>
+    <gfol-breadcrumb>
+        <gfol-breadcrumb-list>
+            <gfol-breadcrumb-list-item>
+                <partial name="_LoginPartial" />
+            </gfol-breadcrumb-list-item>
+        </gfol-breadcrumb-list>
+    </gfol-breadcrumb>
+
+    <gfol-main-wrapper>
+        <gfol-row>
+            <gfol-column desktop-size="TwoThirds" tablet-size="FullWidth">
+                <gfol-heading heading-type="H1" text="Give Feedback On Lighting"></gfol-heading>
+                <gfol-paragraph>Use this service to tell us about:</gfol-paragraph>
+
+                <gfol-list list-type="Bullet">
+                    <li>the quality of the lighting outside your home</li>
+                    <li>a concern you have about the level of light</li>
+                    <li>if you are happy with the lighting outside your home</li>
+                </gfol-list>
+
+                <a asp-controller="Form" asp-action="Index">
+                    <gfol-paragraph><gfol-button button-status="Enabled" button-text="Start Now >" button-type="Submit" start-now="true"></gfol-button></gfol-paragraph>
+                </a>
+                @*<a asp-controller="Form" asp-action="Index" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+                    Start now
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg>
+                </a>*@
+                <gfol-heading heading-type="H3" text="Before you start"></gfol-heading>
+
+                <gfol-paragraph>The online service is also available in <a class="govuk-link" href="#">Welsh (Cymraeg)</a>.</gfol-paragraph>
+
+                <gfol-paragraph>You cannot register for this service if you’re in the UK illegally.</gfol-paragraph>
+            </gfol-column>
+
+            <gfol-column desktop-size="OneThird " tablet-size="FullWidth">
+
+                <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+                <aside class="app-related-items" role="complementary">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <gfol-heading heading-type="H3" text="Admin Tasks"></gfol-heading>
+                        <nav role="navigation" aria-labelledby="subsection-title">
+                            <gfol-list list-type="Normal">
+                                <li>
+                                    <a class="govuk-link" asp-action="Index" asp-controller="Submission">
+                                        View Submissions
+                                    </a>
+                                </li>
+                            </gfol-list>
+                        </nav>
+                    }
+                    else
+                    {
+                        <gfol-heading heading-type="H3" text="Related Links"></gfol-heading>
+                        <nav role="navigation" aria-labelledby="subsection-title">
+                            <gfol-list list-type="Normal">
+                                <li>
+                                    <a class="govuk-link" href="#">
+                                        Fab Lighting
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="govuk-link" href="#">
+                                        Lamp Posts R Us
+                                    </a>
+                                </li>
+                            </gfol-list>
+                        </nav>
+                    }
+                </aside>
+
+            </gfol-column>
+
+        </gfol-row>
+
+    </gfol-main-wrapper>
+
+</gfol-container>

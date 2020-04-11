@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, GFOL.Helpers
+@model GFOL.Helpers.SubmissionVM
+@{
+    ViewData["Title"] = "View Submmission";
+}
+<gfol-row>
+    <gfol-column desktop-size="FullWidth" tablet-size="FullWidth">
+        <gfol-fieldset fieldset-type="NormalCol8">
+            <a asp-action="Index" asp-controller="Submission" class="govuk-back-link">Back</a>
+        </gfol-fieldset>
+        <gfol-heading heading-type="H2" text="View submission"></gfol-heading>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                @foreach (var answer in Model.Answers)
+                {
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            @answer.Question
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            @answer.AnswerText
+                        </dd>
+                    </div>
+                }
+            </dl>
+    </gfol-column>
+</gfol-row>
+

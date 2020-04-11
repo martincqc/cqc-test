@@ -1,0 +1,41 @@
+﻿@using GFOL.Helpers.HtmlHelpers
+@model GFOL.Helpers.PageVM
+@{
+    ViewData["Title"] = "Index";
+}
+<gfol-row>
+    <gfol-column desktop-size="TwoThirds" tablet-size="FullWidth">
+        <gfol-fieldset fieldset-type="NormalCol8">
+            <a asp-action="Index" asp-controller="Form" asp-route-id="@Model.PreviousPageId" class="govuk-back-link">Back</a>
+        </gfol-fieldset>
+        <form asp-action="Index" asp-controller="Form" method="post">
+            <input type="hidden" asp-for="PageId" />
+            <input type="hidden" asp-for="NextPageId" />
+            <input type="hidden" asp-for="PageName" />
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+                        @Model.PageName
+                    </h1>
+                </legend>
+
+                @for (var index = 0; index < Model.Questions.Count; index++)
+                {
+                    @Html.HiddenFor(m => Model.Questions[index].QuestionId)
+                    @Html.HiddenFor(m => Model.Questions[index].QuestionText)
+                    @Html.HiddenFor(m => Model.Questions[index].DataType)
+                    @Html.HiddenFor(m => Model.Questions[index].InputType)
+
+                    @Html.GdsQuestion(Model.Questions[index])
+                }
+                @if (Model.Buttons != null)
+                {
+                    foreach (var button in Model.Buttons)
+                    {
+                        @Html.GfolButton(button.ButtonType, button.ButtonText)
+                    }
+                }
+
+        </form>
+    </gfol-column>
+</gfol-row>

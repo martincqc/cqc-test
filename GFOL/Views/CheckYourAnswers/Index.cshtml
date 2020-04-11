@@ -1,0 +1,35 @@
+﻿@using GFOL.Helpers.HtmlHelpers
+@model GFOL.Helpers.SubmissionVM
+@{
+    ViewData["Title"] = "CheckYourAnswers";
+}
+<gfol-container>
+    <gfol-main-wrapper>
+        <gfol-row>
+            <gfol-column desktop-size="FullWidth" tablet-size="FullWidth">
+                <gfol-heading heading-type="H2" text="Check your answers before sending your feedback"></gfol-heading>
+                    <form asp-action="Index" asp-controller="CheckYourAnswers" method="post">
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            @foreach (var answer in Model.Answers.Where(x => x.ShowInConfirm))
+                            {
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        @answer.Question
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        @answer.AnswerText
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="Form/Index/@answer.PageId">
+                                            Change
+                                        </a>
+                                    </dd>
+                                </div>
+                            }
+                        </dl>
+                        @Html.GfolButton("submit", "Submit Feedback")
+                    </form>
+            </gfol-column>
+        </gfol-row>
+    </gfol-main-wrapper>
+</gfol-container>

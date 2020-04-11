@@ -1,0 +1,40 @@
+﻿@model ViewSubmissionsVM
+@{
+    ViewData["Title"] = "View All Submmissions";
+}
+
+<gfol-row>
+    <gfol-column desktop-size="FullWidth" tablet-size="FullWidth">
+        <gfol-fieldset fieldset-type="NormalCol8">
+            <a asp-action="Index" asp-controller="Home" class="govuk-back-link">Back</a>
+        </gfol-fieldset>
+        @if (Model.Submissions.Count == 0)
+            {
+                <gfol-heading heading-type="H2" text="There are no submissions to view!"></gfol-heading>
+            }
+            else
+            {
+                <gfol-heading heading-type="H2" text="View submissions"></gfol-heading>
+            }
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                @foreach (var submission in Model.Submissions)
+                {
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__value">
+                            @submission.DateCreated
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            @submission.Answers[0].AnswerText
+                        </dd>
+                        <dd class="govuk-summary-list__value">
+                            GFOL-123-@submission.Id
+                        </dd>
+                        <dd>
+                            <td><a class="govuk-footer__link" asp-controller="Submission" asp-action="ViewSubmission" asp-route-id="@submission.Id">View</a></td>
+                        </dd>
+                    </div>
+                }
+            </dl>
+    </gfol-column>
+
+</gfol-row>
