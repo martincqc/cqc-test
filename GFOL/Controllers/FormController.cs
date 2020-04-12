@@ -76,7 +76,7 @@ namespace GFOL.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                var pageVm = _formService.GetPageById(id, true);//TODO remove this flag
+                var pageVm = _formService.GetPageById(id);
                 //load any existing answers from the session
                 foreach (var question in pageVm.Questions)
                 {

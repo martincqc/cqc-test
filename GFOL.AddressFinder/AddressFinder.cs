@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace AddressLookup
+namespace GFOL.AddressFinder
 {
     public interface IAddressFinder
     {
@@ -49,7 +47,7 @@ namespace AddressLookup
                 }
             }
 
-			return addressList;
+            return addressList;
         }
 
         public async Task<List<AddressResult>> GetAddressesTest(string postcode, string apiKey)

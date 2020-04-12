@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AddressLookup;
+using GFOL.AddressFinder;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -54,7 +54,7 @@ namespace GFOL
             services.AddScoped<IFormService, FormService>();
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IGFOLValidation, GFOLValidation>();
-            services.AddScoped<IAddressFinder, AddressFinder>();
+            services.AddScoped<IAddressFinder, AddressFinder.AddressFinder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

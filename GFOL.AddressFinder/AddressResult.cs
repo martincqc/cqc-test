@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace AddressLookup
+namespace GFOL.AddressFinder
 {
-    public  class AddressResult
+    public class AddressResult
     {
         [JsonProperty("summaryline")]
         public string SummaryLine { get; set; }

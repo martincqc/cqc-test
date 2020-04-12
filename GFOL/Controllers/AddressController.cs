@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AddressLookup;
+using GFOL.AddressFinder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -23,9 +23,9 @@ namespace GFOL.Controllers
             try
             {
                 var apiKey = "PCWT2-KQF2C-CSL92-7P85A";//TODO put this into config
-                var addressList = _addressFinder.GetAddressesTest(postcode, apiKey).Result;
+                //var addressList = _addressFinder.GetAddressesTest(postcode, apiKey).Result;
                 //TODO uncomment this to switch on real address finder
-                //var addressList = _addressFinder.GetAddresses(postcode, apiKey).Result;
+                var addressList = _addressFinder.GetAddresses(postcode, apiKey).Result;
                 return View(new AddressListVM { PostCode = postcode, Addresses = addressList, PageId = pageId, NextPageId = nextPageId });
             }
             catch (Exception e)

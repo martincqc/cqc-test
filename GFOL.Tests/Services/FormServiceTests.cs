@@ -25,7 +25,7 @@ namespace GFOL.Tests.Services
         {
             var mockRepo = new Mock<IGenericRepository<Schema>>();
             var sut = new FormService(mockRepo.Object);
-            var result = sut.GetPageById(pageId);
+            var result = sut.GetPageById(pageId, true);
             result.Should().NotBe(null);
             result.Questions.Count.Should().BeGreaterThan(0);
         }

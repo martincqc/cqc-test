@@ -21,7 +21,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\AddressLookup\AddressLookup.csproj" />
+    <ProjectReference Include="..\GFOL.AddressFinder\GFOL.AddressFinder.csproj" />
     <ProjectReference Include="..\GFOL.Helpers\GFOL.Helpers.csproj" />
   </ItemGroup>
 

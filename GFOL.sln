@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFOL.Helpers", "GFOL.Helper
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFOL.Tests", "GFOL.Tests\GFOL.Tests.csproj", "{C718BEDF-3ACF-4EBB-BA3B-7C3365C5DB8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressLookup", "AddressLookup\AddressLookup.csproj", "{A3683367-7743-41C7-9BFE-E3C776D55E5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFOL.AddressFinder", "GFOL.AddressFinder\GFOL.AddressFinder.csproj", "{F23C5C50-F409-49D7-8950-DABD4167BCF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{C718BEDF-3ACF-4EBB-BA3B-7C3365C5DB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C718BEDF-3ACF-4EBB-BA3B-7C3365C5DB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C718BEDF-3ACF-4EBB-BA3B-7C3365C5DB8A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3683367-7743-41C7-9BFE-E3C776D55E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3683367-7743-41C7-9BFE-E3C776D55E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3683367-7743-41C7-9BFE-E3C776D55E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3683367-7743-41C7-9BFE-E3C776D55E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23C5C50-F409-49D7-8950-DABD4167BCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23C5C50-F409-49D7-8950-DABD4167BCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23C5C50-F409-49D7-8950-DABD4167BCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23C5C50-F409-49D7-8950-DABD4167BCF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
